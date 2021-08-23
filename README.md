@@ -12,6 +12,18 @@
 
 3. Then, after starting up IntelliJ, you can download and install the Scala plugin by following the instructions on 
     how to install IntelliJ plugins (search for “Scala” in the plugins menu.) - https://www.jetbrains.com/help/idea/managing-plugins.html
+    
+4. Now add Scala Libraries. Go to File/Project Structure/Globl Libraries --> (+ icon on top) --> Scala SDK --> Download (Or Browse if you already have Scala SDK)
+
+5. Next you have to remove some SDK files(If the build won't start and it shows error like below then multiple SDKs are pesent; we have to remove some...).
+    Select everything( in the standard library section) that starts with ...\common\... and remove them
+
+<i> Error:scalac: Multiple 'scala-library*.jar' files (scala-library.jar, scala-library.jar, scala-library.jar) in Scala compiler classpath in Scala SDK scala-sdk-2.11.12</i>
+
+6. Then remove all files that ends with ".src.jar" and remove them
+
+7. Repeat steps #5 and #6 for "Compiler classpath" section.
+
 
 ## Creating the Project
 
@@ -25,7 +37,7 @@
 
 5. Select the highest version number (e.g. 2.13.6) and click Download. This might take a few minutes but subsequent projects can use the same SDK.
 
-6. Once the SDK is created and you’re back to the “New Project” window click Finish.
+6. Once the SDK is created and you're back to the “New Project” window click Finish.
 
 ## Writing code
 
@@ -37,11 +49,14 @@ try expanding the src folder and its main subfolder, and right-click on the scal
 
 3. Change the code in the class to the following:
 
+```
 object Hello extends App {
   println("Hello, World!")
 }
+```
 
 ### Running it
 
-Right click on Hello in your code and select Run ‘Hello’.
+1. Right click on Hello in your code and select Run ‘Hello’.
 You’re done!
+
