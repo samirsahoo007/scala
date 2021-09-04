@@ -60,3 +60,11 @@ object Hello extends App {
 1. Right click on Hello in your code and select Run ‘Hello’.
 You’re done!
 
+
+## How to start scala REPL(command-line shell)
+
+**Ctrl+Shift+D**
+
+OR
+
+Right-click on your Scala object and select **Scala REPL**
