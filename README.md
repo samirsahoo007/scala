@@ -62,6 +62,7 @@ You’re done!
 
 
 ## How to start scala REPL(command-line shell)
+_REPL => Read-Evaluate-Print-Loop_
 
 **Ctrl+Shift+D**
 
