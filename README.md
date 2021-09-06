@@ -113,3 +113,7 @@ object calculateResult extends App {
    println("Difference of the value is: " + funSub(8,6));
  }
 ```
+
+## Difference between var and val in scala
+**val makes a variable immutable** - like final in Java
+var makes a variable mutable.
