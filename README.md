@@ -69,3 +69,22 @@ _REPL => Read-Evaluate-Print-Loop_
 OR
 
 Right-click on your Scala object and select **Scala REPL**
+
+
+# MEthod call
+```
+object calculateResult {
+      def funSub(x:Int, y:Int) : Int =
+   {
+       var diff = 0
+       diff = x - y
+       return diff
+   }
+   
+   def main(args: Array[String]) {
+
+      // Function call
+      println("Difference of the value is: " + funSub(8,6));
+   }
+}
+```
