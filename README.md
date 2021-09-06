@@ -88,3 +88,28 @@ object calculateResult {
    }
 }
 ```
+
+# Scala | Trait App
+App is a trait which is utilized to rapidly change objects into feasible programs, which is carried out by applying DelayedInit function and the objects inheriting the trait App uses this function to execute the entire body of the program as a section of an inherited main method.
+**Note:**
+
+trait App extends _DelayedInit_
+The Linear Super-types here are: _DelayedInit, AnyRef, Any_
+The value members are:
+_val executionStart: Long
+def main(args: Array[String]): Unit_
+
+e.g. The above example can be modified as below(main is not needed now):
+
+```
+object calculateResult extends App {
+      def funSub(x:Int, y:Int) : Int =
+   {
+       var diff = 0
+       diff = x - y
+       return diff
+   }
+   
+   println("Difference of the value is: " + funSub(8,6));
+ }
+```
