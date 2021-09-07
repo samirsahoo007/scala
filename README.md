@@ -138,6 +138,9 @@ object MainObject
         println("\ncontains 3: "+ seq.contains(3))
         println("\nlast index of 4 : "+ seq.lastIndexOf(4))
         println("\nReversed sequence: "+ seq.reverse)
+        println("\nElements Access Using Index")
+        println(seq(0))
+        println(seq(1))
     }
 }
 
@@ -154,4 +157,6 @@ contains 3: true
 last index of 4 : 3
 
 Reversed sequence: List(6, 5, 4, 3, 2, 1)
+1
+2
 ```
