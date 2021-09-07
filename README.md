@@ -117,3 +117,41 @@ object calculateResult extends App {
 ## Difference between var and val in scala
 **val makes a variable immutable** - like final in Java
 var makes a variable mutable.
+
+```
+// Scala program to illustrate sequence
+object MainObject
+{
+    // Main Method
+    def main(args:Array[String])
+    {
+        // Initializing sequence
+        var seq:Seq[Int] = Seq(1, 2, 3, 4, 5, 6)
+         
+        // Printing Sequence
+        seq.foreach((element:Int) => print(element+","))
+         
+        // Using Some Predefined Methods
+        println("\nis Empty: "+ seq.isEmpty)
+        println("\nEnds with (5,6): "+ seq.endsWith(Seq(5,6)))
+        println("\nLength of sequence: "+ seq.length)
+        println("\ncontains 3: "+ seq.contains(3))
+        println("\nlast index of 4 : "+ seq.lastIndexOf(4))
+        println("\nReversed sequence: "+ seq.reverse)
+    }
+}
+
+## Output
+1,2,3,4,5,6,
+is Empty: false
+
+Ends with (5,6): true
+
+Length of sequence: 6
+
+contains 3: true
+
+last index of 4 : 3
+
+Reversed sequence: List(6, 5, 4, 3, 2, 1)
+```
