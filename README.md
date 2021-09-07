@@ -89,6 +89,14 @@ object calculateResult {
 }
 ```
 
+# Method declaration and definition
+```
+def 'method_name' ('parameters':'return_type_parameters') : ('return_type_of_method') = {
+    'method_body'
+     return 'value'
+}
+```
+
 # Scala | Trait App
 App is a trait which is utilized to rapidly change objects into feasible programs, which is carried out by applying DelayedInit function and the objects inheriting the trait App uses this function to execute the entire body of the program as a section of an inherited main method.
 **Note:**
