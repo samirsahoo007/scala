@@ -70,6 +70,14 @@ OR
 
 Right-click on your Scala object and select **Scala REPL**
 
+```
+## Useful intelliJ shortcuts
+Find the search string in the project listing all files => **Ctrl + Shift + F**
+Show usages => **Ctrl + Alt + F7**
+Find usage in a file => **Ctrl + F7**
+Highlight Usages in a file => **Ctrl + Shift + F7**
+Find Usages => **Alt + F7**
+```
 
 # MEthod call
 ```
