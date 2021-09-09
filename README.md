@@ -60,6 +60,8 @@ object Hello extends App {
 1. Right click on Hello in your code and select Run ‘Hello’.
 You’re done!
 
+## Apostrophes and double quotes don't show up on inteliJ?
+press Left Alt+Shift.
 
 ## How to start scala REPL(command-line shell)
 _REPL => Read-Evaluate-Print-Loop_
