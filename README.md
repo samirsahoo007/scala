@@ -178,3 +178,22 @@ Reversed sequence: List(6, 5, 4, 3, 2, 1)
 1
 2
 ```
+
+## File I/O
+
+Import scala.io.Source
+Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").mkStrings    // One line at a Time
+Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").getLines()    // non-empty iterator
+Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").getLines().foreach{x =>println(x)}
+Console.readline                                                        //used to read the File from the console only.
+Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").getLines.take(1).foreach(println)    //  take() function take the line element we want to read it from that read file.
+Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").getLines.take(2).foreach(println)    //  prints line 2 of the file
+Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").getLines.slice(0,2).foreach(println) // This takes up the two lines and gives the result for operation.
+
+Source.fromFile(“Path of File”).getLines.toList                         // File to List
+
+```
+Scala> val b = Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt")
+b: scala.io.BufferedSource = non-empty iterator
+```
+So this buffered source has to be closed once the operations are done over them. So we use the .close method to perform the same.
