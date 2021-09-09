@@ -181,6 +181,7 @@ Reversed sequence: List(6, 5, 4, 3, 2, 1)
 
 ## File I/O
 
+```
 Import scala.io.Source
 Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").mkStrings    // One line at a Time
 Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").getLines()    // non-empty iterator
@@ -192,7 +193,6 @@ Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt").getLines.slice(0,2).f
 
 Source.fromFile(“Path of File”).getLines.toList                         // File to List
 
-```
 Scala> val b = Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt")
 b: scala.io.BufferedSource = non-empty iterator
 ```
