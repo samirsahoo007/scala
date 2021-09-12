@@ -79,6 +79,7 @@ Show usages => **Ctrl + Alt + F7**
 Find usage in a file => **Ctrl + F7**
 Highlight Usages in a file => **Ctrl + Shift + F7**
 Find Usages => **Alt + F7**
+Navigate | Last edit location => **Ctrl + Shift + Backspace**
 ```
 
 # MEthod call
