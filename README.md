@@ -77,7 +77,7 @@ Right-click on your Scala object and select **Scala REPL**
 Find the search string in the project listing all files => **Ctrl + Shift + F**
 Show usages => **Ctrl + Alt + F7**
 Find usage in a file => **Ctrl + F7**
-Highlight Usages in a file => **Ctrl + Shift + F7**
+Highlight Usages in a file => **Ctrl + Shift + F7** (Use F3 or Shift+F3 to navigate through highlight usages and Escape to remove highlighting)
 Find Usages => **Alt + F7**
 Navigate | Last edit location => **Ctrl + Shift + Backspace**
 ```
