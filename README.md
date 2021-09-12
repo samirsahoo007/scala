@@ -80,6 +80,9 @@ Find usage in a file => **Ctrl + F7**
 Highlight Usages in a file => **Ctrl + Shift + F7** (Use F3 or Shift+F3 to navigate through highlight usages and Escape to remove highlighting)
 Find Usages => **Alt + F7**
 Navigate | Last edit location => **Ctrl + Shift + Backspace**
+
+Use **Code | Reformat Code** to reformat code according to File | Settings | Code Style
+Use **Code | Optimize Imports** to remove redundant/unused imports
 ```
 
 # MEthod call
