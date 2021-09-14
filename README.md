@@ -4,6 +4,7 @@
 1. Make sure you have the Java 8 JDK (also known as 1.8)
 
     i. On Linux: Run javac -version on the command line and make sure you see javac 1.8.___
+    
     ii. On Windows: Check if java is listed in <b>Control Panel</b> --> <b>Programs and Features</b>
   
     If you don’t have version 1.8 or higher, install the JDK
