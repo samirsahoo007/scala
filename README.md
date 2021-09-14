@@ -250,3 +250,35 @@ while(keys.hasNext()) {
     }
 }
 ```
+
+## Check if mystring exists in a list of strings
+strings.contains(myString)
+
+## break and continue
+### break
+```
+import util.control.Breaks._
+
+breakable {
+  for (i <- 1 to 10) {
+    println(i)
+    if (i > 4) break  // break out of the for loop
+  }
+}
+# Output: 1 2 3 4 5
+```
+
+### continue
+```
+import util.control.Breaks._
+
+object BreakTests extends App {    
+    for (i <- 1 to 10) {
+        breakable {
+            if (i % 2 == 0) break
+            println(i)
+        }
+    }
+}
+# Output: 1,3,5,7,9
+```
