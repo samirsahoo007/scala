@@ -202,3 +202,38 @@ Scala> val b = Source.fromFile("C://Users//arpianan//Desktop//Demo3.txt")
 b: scala.io.BufferedSource = non-empty iterator
 ```
 So this buffered source has to be closed once the operations are done over them. So we use the .close method to perform the same.
+
+## List
+Lists are immutable whereas arrays are mutable in Scala.
+Lists represents a linked list whereas arrays are flat.
+In a Scala list, each element must be of the same type.
+
+**Syntax:**
+```
+val variable_name: List[type] = List(item1, item2, item3)
+or
+val variable_name = List(item1, item2, item3)
+
+
+// Scala program to print immutable lists
+import scala.collection.immutable._
+
+object GFG
+{
+	def main(args:Array[String])
+	{
+		// Creating and initializing immutable lists
+		val mylist1: List[String] = List("Geeks", "GFG", "GeeksforGeeks", "Geek123")
+		val mylist2 = List("C", "C#", "Java", "Scala", "PHP", "Ruby")
+        
+		println("List 1:")
+		println(mylist1)
+        
+		println("\nList 2:")
+		for(mylist<-mylist2)
+		{
+		    println(mylist)
+		}
+	}
+}
+```
