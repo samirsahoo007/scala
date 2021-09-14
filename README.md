@@ -238,3 +238,15 @@ object GFG
 	}
 }
 ```
+
+## Iterating over JSONObject
+```
+jsonObject = new JSONObject(contents.trim());
+Iterator<String> keys = jsonObject.keys();
+while(keys.hasNext()) {
+    String key = keys.next();
+    if (jsonObject.get(key) instanceof JSONObject) {
+          // do something with jsonObject here      
+    }
+}
+```
