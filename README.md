@@ -317,3 +317,7 @@ object Demo {
    }
 }
 ```
+
+
+## How to add elements to a List in Scala (List, ListBuffer)
+This is actually a trick question, because you can't add elements to a Scala List; it's an immutable data structure, like a Java String.
