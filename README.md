@@ -299,6 +299,15 @@ while(keys.hasNext){
   println(key)
 }
 ```
+#### Accessing values
+```
+val keys = myjsonobj.keys()
+while(keys.hasNext){
+  val key = keys.next().toString
+  val value = myjsonobj.get(key)
+  println(value)
+}
+```
 
 ### Other operations
 Here, we used ita and itb, itc and itd to perform four different operations because iterator can be traversed only once.
