@@ -327,6 +327,13 @@ object Demo {
 }
 ```
 
+### Check datatype of a varialbe whether it's a JSONObject, String or List
+val myVar = "hello"
+
+myVar.isInstanceOf[JSONObject]		=> False
+
+myvar.isInstanceOf[String]		=> True
+
 
 ## How to add elements to a List in Scala (List, ListBuffer)
 This is actually a trick question, because you can't add elements to a Scala List; it's an immutable data structure, like a Java String.
