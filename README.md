@@ -282,3 +282,20 @@ object BreakTests extends App {
 }
 # Output: 1,3,5,7,9
 ```
+
+## Iterators
+```
+val it=Iterator(2,4,3,7,9)
+while(it.hasNext){
+  println(it.next())
+}
+```
+
+### Accessing keys and values on JSONObject. e.g. myjsonobj = {"id":12345, "date":453454545, "user":{"name":"sam", "email":xyz@email.com}}
+```
+val keys = myjsonobj.keys()
+while(keys.hasNext){
+  val key = keys.next()
+  println(key)
+}
+```
