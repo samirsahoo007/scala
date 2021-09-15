@@ -299,3 +299,21 @@ while(keys.hasNext){
   println(key)
 }
 ```
+
+### Other operations
+Here, we used ita and itb, itc and itd to perform four different operations because iterator can be traversed only once.
+
+```
+object Demo {
+   def main(args: Array[String]) {
+      val ita = Iterator(20,40,2,50,69, 90)
+      val itb = Iterator(20,40,2,50,69, 90)
+      
+      println("Maximum valued element " + ita.max )
+      println("Minimum valued element " + itb.min )
+      
+      println("Value of itc.size : " + itc.size )
+      println("Value of itd.length : " + itd.length )
+   }
+}
+```
