@@ -365,3 +365,63 @@ object IsNumber extends App {
 
 ## How to add elements to a List in Scala (List, ListBuffer)
 This is actually a trick question, because you can't add elements to a Scala List; it's an immutable data structure, like a Java String.
+
+### Solution
+
+To work with a List, the general approach is to prepend items to the list with the :: method while assigning the results to a new List:
+
+```
+scala> val x = List(2)
+x: List[Int] = List(2)
+
+scala> val y = 1 :: x
+y: List[Int] = List(1, 2)
+
+scala> val z = 0 :: y
+z: List[Int] = List(0, 1, 2)
+```
+
+Rather than continually reassigning the result of this operation to a new variable, you can declare your variable as a var, and reassign the result to it:
+```
+scala> var x = List(2)
+x: List[Int] = List(2)
+
+scala> x = 1 :: x
+x: List[Int] = List(1, 2)
+
+scala> x = 0 :: x
+x: List[Int] = List(0, 1, 2)
+```
+
+As these examples illustrate, the :: method is right-associative; lists are constructed from right to left.
+Any Scala method that ends with a : character is evaluated from right to left. This means that the method is invoked on the right operand. You can see how this works by analyzing the following code, where both methods print the number 42:
+
+```
+object RightAssociativeExample extends App {
+    val f1 = new Printer
+    f1 >> 42
+    42 >>: f1
+}
+
+class Printer {
+    def >>(i: Int) { println(s"$i") }
+    def >>:(i: Int) { println(s"$i") }
+}
+
+The two methods can also be invoked like this:
+
+f1.>>(42)
+f1.>>:(42)
+```
+
+Though using :: is very common, there are additional methods that let you prepend or append single elements to a List:
+```
+scala> val x = List(1)
+x: List[Int] = List(1)
+
+scala> val y = 0 +: x
+y: List[Int] = List(0, 1)
+
+scala> val y = x :+ 2
+y: List[Int] = List(1, 2)
+```
