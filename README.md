@@ -425,3 +425,19 @@ y: List[Int] = List(0, 1)
 scala> val y = x :+ 2
 y: List[Int] = List(1, 2)
 ```
+
+### Use a ListBuffer when you want a "List" you can modify
+If you want to use a Scala sequence that has many characteristics of a List and is also mutable — i.e., you can add and remove elements in it - the correct approach is to use the Scala ListBuffer class instead, like this:
+
+```
+import scala.collection.mutable.ListBuffer
+
+var fruits = new ListBuffer[String]()
+fruits += "Apple"
+fruits += "Banana"
+fruits += "Orange"
+
+val fruitsList = fruits.toList	//Then convert it to a List if/when you need to...
+```
+
+**Note:** Depending on your needs, it may be better to use an ArrayBuffer rather than a ListBuffer.
