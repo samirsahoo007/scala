@@ -357,5 +357,11 @@ object IsNumber extends App {
 }
 ```
 
+## isDigit
+```
+  scala> "abc123" exists (_.isDigit)
+  res1: Boolean = true
+```
+
 ## How to add elements to a List in Scala (List, ListBuffer)
 This is actually a trick question, because you can't add elements to a Scala List; it's an immutable data structure, like a Java String.
