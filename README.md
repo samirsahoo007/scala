@@ -447,3 +447,12 @@ val fruitsList = fruits.toList	//Then convert it to a List if/when you need to..
 scala> "1   2 3".split("\\s+")
 res2: Array[String] = Array(1, 2, 3)
 ```
+
+### regex
+```
+val numPattern = "[0-9]+".r
+val address = "123 Main Street Suite 101"
+
+val match1 = numPattern.findFirstIn(address)	// finds the first match # 123
+val matches = numPattern.findAllIn(address)	// finds all matches # 123   101
+```
