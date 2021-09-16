@@ -441,3 +441,9 @@ val fruitsList = fruits.toList	//Then convert it to a List if/when you need to..
 ```
 
 **Note:** Depending on your needs, it may be better to use an ArrayBuffer rather than a ListBuffer.
+
+### Split by one/more whitespace
+```
+scala> "1   2 3".split("\\s+")
+res2: Array[String] = Array(1, 2, 3)
+```
