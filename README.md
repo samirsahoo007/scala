@@ -64,6 +64,11 @@ You’re done!
 ## Apostrophes and double quotes don't show up on inteliJ?
 press Left Alt+Shift.
 
+## How do I change cursor from a block back to | ?
+Block cursor indicates Insert mode. You can toggle it with Insert key.
+
+Another possible reason is **Block caret** option enabled in **Settings -> Appearance**
+
 ## How to start scala REPL(command-line shell)
 _REPL => Read-Evaluate-Print-Loop_
 
