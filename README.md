@@ -489,3 +489,15 @@ textUserTyped match {
     case _ => println("did not match a regex")
 }
 ```
+
+### Assigning scala empty array
+When you do var c = Array(), Scala computes the type as Array[Nothing] and therefore you can't reassign it with a Array[Int]. Nothing is the bottom type of Scala type hierarchy. It is a subtype of EVERY other type. What you can do is:
+
+```
+var c : Array[Any] = Array()
+c = Array(1)
+or
+
+var c : Array[Int] = Array()
+c =  Array(1)
+```
