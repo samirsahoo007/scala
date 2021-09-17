@@ -244,6 +244,13 @@ object GFG
 }
 ```
 
+### for-loop Example using by keyword
+```
+        for(i<-1 to 10 by 2){  			// by 2 it means, this loop will skip all even iterations of loop.
+            println(i)  
+        }
+```
+
 ## Iterating over JSONObject
 ```
 jsonObject = new JSONObject(contents.trim());
