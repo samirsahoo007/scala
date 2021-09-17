@@ -551,3 +551,6 @@ Hi Bob!
 Age: 32 year, name: Charlie?
 ```
 
+### Join elements of a list to a string separated by comma
+
+theStrings.mkString(",")
