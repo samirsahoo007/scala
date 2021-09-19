@@ -554,3 +554,24 @@ Age: 32 year, name: Charlie?
 ### Join elements of a list to a string separated by comma
 
 theStrings.mkString(",")
+
+### Check if key exists in a JSONObject
+if (json.has("status")) {
+   String status = json.getString("status"));
+}
+
+### JSONArray Read first element?
+JSONObject first =
+  new JSONArray(
+    "[{\"Key1\":\"Value1\"}]").
+  getJSONObject(0)
+
+### How to get first element from iterator
+```
+	val iter = Iterator(2, 3, 5, 7, 8, 9)
+        val iter1 = iter.take(1)
+        while(iter1.hasNext)
+        {
+            println(iter1.next())
+        }
+```
