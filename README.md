@@ -576,6 +576,29 @@ JSONObject first =
         }
 ```
 
+### Single liners
+```
 val x = if (a > b) a else b
 def abs(x: Int) = if (x >= 0) x else -x
+```
 
+# Filter date and time from datetime string/int
+```
+  import java.time.Instant
+
+  val instantTime = Instant.ofEpochMilli(parsedDate.getTime)
+
+  import java.time.LocalDateTime
+  import java.time.LocalTime
+  import java.time.ZoneId
+
+  val res = LocalDateTime.ofInstant(instantTime, ZoneId.systemDefault).toLocalTime
+  println("localeTime " + res)
+
+  val res1 = LocalDateTime.ofInstant(parsedDate.toInstant,ZoneId.systemDefault).toLocalDate
+  println("localeDate " + res1)
+  
+  Output:
+    localeTime: 18:11:30.850
+    localeDate: 2019-07-23
+```
