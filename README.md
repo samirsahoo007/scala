@@ -575,3 +575,7 @@ JSONObject first =
             println(iter1.next())
         }
 ```
+
+val x = if (a > b) a else b
+def abs(x: Int) = if (x >= 0) x else -x
+
