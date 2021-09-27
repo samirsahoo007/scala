@@ -617,4 +617,8 @@ or
 
 val c = a ++ b
 
+### How to remove empty strings from an array or list of strings?
+
+val x = List("foo", "", "bar", "")
+x.filter(_.nonEmpty)
 
