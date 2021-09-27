@@ -602,3 +602,19 @@ def abs(x: Int) = if (x >= 0) x else -x
     localeTime: 18:11:30.850
     localeDate: 2019-07-23
 ```
+
+### List merge (:::) or concat
+
+val a = List(1,2,3)
+val b = List(4,5,6)
+val c = a ::: b       **This operation is said to have O(n) speed, where n is the number of elements in the first List.**
+
+or
+
+val c = List.concat(a, b)
+
+or
+
+val c = a ++ b
+
+
