@@ -92,6 +92,31 @@ Use **Code | Reformat Code** to reformat code according to File | Settings | Cod
 Use **Code | Optimize Imports** to remove redundant/unused imports
 ```
 
+# Seq vs List
+
+**Sequence** is a collection that stores elements in a fixed order. It is an indexed collection with 0 index.
+
+**List** is a collection that stores elements in the form of a linked list.
+
+Both are collections that can store data but the sequence has some additional features over the list. In Scala, a list is a specialized collection that is optimized and commonly used in functional programming. There are some limitations of it but is commonly used to store data because of being optimized and faster compilation, also specialized functions available add a bit more functionality.
+**If we create a sequence it is by default initialized as a list. But if we want to create a sequence other than list, we need to create it explicitly using specific creation syntax.** See the output below.
+
+```
+object MyClass {
+    def main(args: Array[String]) {
+        val progLang : List[String] = List("scala", "javaScript", "Java", "C#")
+        println("The list of programming languages is "+ progLang)
+	
+	val progLang2 : Seq[String] = Seq("scala", "javaScript", "Java", "C#")
+        println("The list of programming languages is "+ progLang2)
+    }
+}
+
+Output:
+The list of programming languages is List(scala, javaScript, Java, C#)
+The list of programming languages is List(scala, javaScript, Java, C#)
+```
+
 # MEthod call
 ```
 object calculateResult {
