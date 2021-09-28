@@ -473,6 +473,29 @@ scala> val y = x :+ 2
 y: List[Int] = List(1, 2)
 ```
 
+### How to merge Scala sequential collections (List, Vector, ArrayBuffer, Array, Seq)
+
+Use the ++= method to merge a sequence into a mutable sequence
+Use the ++ method to merge two mutable or immutable sequences
+Use collection methods like union, diff, and intersect
+
+val a = collection.mutable.ArrayBuffer(1,2,3)
+a ++= Seq(4,5,6)				// ArrayBuffer(1, 2, 3, 4, 5, 6)
+
+val a = Array(1,2,3,4,5)
+val b = Array(4, 5, 6, 7, 8)
+a ++ b						// Array(1, 2, 3, 4, 5, 4, 5, 6, 7, 8)
+
+a.intersect(b)					// Array(4, 5)
+
+a.union(b)					// Array(1, 2, 3, 4, 5, 4, 5, 6, 7, 8)
+
+a.union(b).distinct				// Array(1, 2, 3, 4, 5, 6, 7, 8) // distinct elements from both collections
+
+a diff b					// Array(1, 2, 3)
+
+b diff a					// Array(6, 7, 8)
+
 ### Use a ListBuffer when you want a "List" you can modify
 If you want to use a Scala sequence that has many characteristics of a List and is also mutable — i.e., you can add and remove elements in it - the correct approach is to use the Scala ListBuffer class instead, like this:
 
