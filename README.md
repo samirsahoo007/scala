@@ -674,3 +674,45 @@ val c = a ++ b
 val x = List("foo", "", "bar", "")
 x.filter(_.nonEmpty)
 
+### filter and filterKeys
+
+```
+object GfG
+{
+	def main(args:Array[String])
+	{
+		val m1 = Map("geeks" -> 5, "for" -> 3)
+		val result = m1.filter(x => x._1 == "geeks" && x._2 == 5)
+		println(result)
+	}
+}
+# Output:
+Map(geeks -> 5)
+```
+
+```
+// Scala program of filterKeys()
+// method
+
+// Creating object
+object GfG
+{
+
+	// Main method
+	def main(args:Array[String])
+	{
+	
+		// Creating map
+		val m1 = Map(5 -> "geeks", 4 -> "for", 2 -> "cs")
+		
+		// Applying filterKeys method
+		val result = m1.filterKeys(_ > 2)
+		
+		// Displays output
+		println(result)
+	
+	}
+}
+# Output:
+Map(5 -> geeks, 4 -> for)
+```
