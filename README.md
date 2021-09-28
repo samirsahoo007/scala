@@ -117,6 +117,10 @@ The list of programming languages is List(scala, javaScript, Java, C#)
 The list of programming languages is List(scala, javaScript, Java, C#)
 ```
 
+In Java terms, Scala's Seq would be Java's List, and Scala's List would be Java's LinkedList.
+
+Note that Seq is a trait, which is equivalent to Java's interface, but with the equivalent of up-and-coming defender methods. Scala's List is an abstract class that is extended by Nil and ::, which are the concrete implementations of List.
+
 # MEthod call
 ```
 object calculateResult {
