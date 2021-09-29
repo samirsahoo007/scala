@@ -132,8 +132,6 @@ object calculateResult {
    }
    
    def main(args: Array[String]) {
-
-      // Function call
       println("Difference of the value is: " + funSub(8,6));
    }
 }
@@ -716,3 +714,7 @@ object GfG
 # Output:
 Map(5 -> geeks, 4 -> for)
 ```
+### One liners
+
+val x = if (a > b) a else b
+def abs(x: Int) = if (x >= 0) x else -x
