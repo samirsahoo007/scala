@@ -718,3 +718,7 @@ Map(5 -> geeks, 4 -> for)
 
 val x = if (a > b) a else b
 def abs(x: Int) = if (x >= 0) x else -x
+
+### Others
+Convert String to Option[String]	=> Option[result]
+Convert Option[String] to String	=> result.get
