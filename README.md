@@ -25,6 +25,18 @@
 
 7. Repeat steps #5 and #6 for "Compiler classpath" section.
 
+## Why so red? IntelliJ seems to think every declaration/method cannot be found/resolved
+
+IntelliJ sometimes gets confused all by itself, even without the external changes Korgen described (though that is a good way to consistently reproduce it).
+
+Click **File -> Synchronize**, and IntelliJ should see that everything is okay again.
+
+If that doesn't work, IntelliJ's caches might be corrupt (this used to happen a lot more often than it does now); in that case, regenerate them by
+
+Clicking **File -> Invalidate Caches and restarting the IDE**
+
+(though loading the project will take a while while the caches are recreated).
+
 
 ## Creating the Project
 
