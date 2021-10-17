@@ -745,3 +745,69 @@ def abs(x: Int) = if (x >= 0) x else -x
 ### Others
 Convert String to Option[String]	=> Option[result]
 Convert Option[String] to String	=> result.get
+
+
+### Using flatMap on a list of Strings
+```
+scala> val fruits = Seq("apple", "banana", "orange")
+fruits: Seq[java.lang.String] = List(apple, banana, orange)
+
+scala> fruits.map(_.toUpperCase)
+res0: Seq[java.lang.String] = List(APPLE, BANANA, ORANGE)
+
+scala> fruits.flatMap(_.toUpperCase)
+res1: Seq[Char] = List(A, P, P, L, E, B, A, N, A, N, A, O, R, A, N, G, E)
+
+```
+
+I like to think of flatMap as a combination of map followed by flatten, so it first runs map on the sequence, then runs flatten, giving the result shown.
+You can see this by running map and then flatten yourself:
+```
+scala> val mapResult = fruits.map(_.toUpperCase)
+mapResult: Seq[String] = List(APPLE, BANANA, ORANGE)
+
+scala> val flattenResult = mapResult.flatten
+flattenResult: Seq[Char] = List(A, P, P, L, E, B, A, N, A, N, A, O, R, A, N, G, E)
+```
+
+flatMap does a nice job of flattening a list that has Some and None values in it.
+```
+scala> val strings = Seq("1", "2", "foo", "3", "bar")
+strings: Seq[java.lang.String] = List(1, 2, foo, 3, bar)
+
+scala> strings.map(toInt)
+res0: Seq[Option[Int]] = List(Some(1), Some(2), None, Some(3), None)
+
+scala> strings.flatMap(toInt)
+res1: Seq[Int] = List(1, 2, 3)
+
+scala> strings.flatMap(toInt).sum
+res2: Int = 6
+```
+
+```
+scala> val list = List(1,2,3,4,5)
+list: List[Int] = List(1, 2, 3, 4, 5)
+
+scala> def g(v:Int) = List(v-1, v, v+1)
+g: (v: Int)List[Int]
+
+scala> list.map(x => g(x))
+res0: List[List[Int]] = List(List(0, 1, 2), List(1, 2, 3), List(2, 3, 4), List(3, 4, 5), List(4, 5, 6))
+
+scala> list.flatMap(x => g(x))
+res1: List[Int] = List(0, 1, 2, 1, 2, 3, 2, 3, 4, 3, 4, 5, 4, 5, 6)
+
+```
+
+Convert Map values to a sequence with flatMap
+```
+scala> val map = Map(1 -> "one", 2 -> "two", 3 -> "three")
+map: scala.collection.immutable.Map[Int,java.lang.String] = Map(1 -> one, 2 -> two, 3 -> three)
+
+scala> 1 to map.size flatMap(map.get)
+res0: scala.collection.immutable.IndexedSeq[java.lang.String] = Vector(one, two, three)
+
+OR
+1 to map.size flatMap(map.get(_))
+```
