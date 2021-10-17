@@ -1,6 +1,17 @@
 # scala in intellij
 
 ## Installation
+### Linux
+```
+sudo apt-get install default-jdk
+sudo apt-get install scala
+
+scalac file_name.Scala
+scala class_name
+```
+
+
+### Windows
 1. Make sure you have the Java 8 JDK (also known as 1.8)
 
     i. On Linux: Run javac -version on the command line and make sure you see javac 1.8.___
