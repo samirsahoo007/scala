@@ -1,3 +1,5 @@
+Read it: https://leportella.com/scala-iv/
+
 # scala in intellij
 
 ## Installation
