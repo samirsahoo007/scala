@@ -4092,3 +4092,75 @@ for (Some(fruit) <- results) println(fruit)
 <br>
 
 ##Chp.16 List
+
+# Getters and Setters in Scala
+
+Getter and Setter in Scala are methods that helps us to get the value of variables and instantiate variables of class/trait respectively. Scala generates a class for the JVM with a private variable field and getter and setter methods. In Scala, the getters and setters are not named getXxx and setXxx, but they are used for the same purpose. At any time, we can redefine the getter and setter methods ourself.
+
+## Setters
+Setter are a technique through which we set the value of variables of a class. Setting an variable of class is simple it can be done in two ways :-
+
+> First if the members of a class are accessible from anywhere. i.e no access modifier specified.
+	For security reasons it is not recommended. As accessing the members of class directly is not a good a method to initiate and change the value as it will allow others to identify the variable.
+
+> Second if the members of a class are defined as private. Initiation of the variables is done by passing the variable to public method of that class using the object of the class.
+
+## Getters
+Getters are a technique through which we get the value of the variables of a class.
+
+> Getting the value of a global variable directly. In which we call specify the name of the variable with the object.
+> Getting the value of a variable through method calling using the object. This technique is good when we don’t have accessibility to class variables but methods are available public.
+
+```
+// A Scala program to illustrate
+// Getting the value of members of a class
+
+// Name of the class is Student
+class Student
+{
+	// Class variables
+	var student_name: String= " "
+	var student_age: Int= 0
+	
+	// Getter
+	private var student_rollno= 0
+	
+	// Class method
+	def set_rollno(x: Int){
+		student_rollno= x
+	}
+	def get_rollno(): Int ={
+		return student_rollno
+	}
+	
+}
+
+// Creating object
+object Main
+{
+	// Main method
+	def main(args: Array[String])
+	{
+		
+		// Class object
+		var obj = new Student()
+		obj.student_name= "Yash"
+		obj.student_age= 22
+		obj.set_rollno(59)
+		
+		// Directly getting the value of variable
+		println("Student Name: " + obj.student_name)
+		
+		// Directly getting the value of variable
+		println("Student Age: " + obj.student_age)
+		
+		// Through method calling
+		println("Student Rollno: " + obj.get_rollno)
+	}
+}
+
+Output:
+Student Name: Yash
+Student Age: 22
+Student Rollno: 59
+```
