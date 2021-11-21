@@ -4164,3 +4164,12 @@ Student Name: Yash
 Student Age: 22
 Student Rollno: 59
 ```
+
+## How to get DayOfWeek from an Instant.now()
+```
+import java.time.Instant
+import java.time.ZoneOffset
+
+int currentDayOfWeekValue = Instant.now().atOffset(ZoneOffset.UTC).getDayOfWeek()		  # SUNDAY
+int currentDayOfWeekValue = Instant.now().atOffset(ZoneOffset.UTC).getDayOfWeek().getValue()      # 7
+```
