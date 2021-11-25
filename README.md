@@ -4173,3 +4173,14 @@ import java.time.ZoneOffset
 int currentDayOfWeekValue = Instant.now().atOffset(ZoneOffset.UTC).getDayOfWeek()		  # SUNDAY
 int currentDayOfWeekValue = Instant.now().atOffset(ZoneOffset.UTC).getDayOfWeek().getValue()      # 7
 ```
+
+## How to format ZonedDateTime
+
+```
+import java.time.format.DateTimeFormatter
+import java.time.ZonedDateTime
+import java.time.ZoneId
+
+val date:ZonedDateTime = ZonedDateTime.now(ZoneId.of(America/New_York));         // ZonedDateTime.now() => default
+DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(date))
+```
