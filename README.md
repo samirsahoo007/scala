@@ -1,5 +1,8 @@
 Read it: https://leportella.com/scala-iv/
 
+https://medium.com/@alessandroheres/scala-debugging-and-unit-testing-3d357e71ccc
+
+
 # scala in intellij
 
 ## Installation
