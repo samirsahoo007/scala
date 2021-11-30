@@ -4185,7 +4185,29 @@ val date:ZonedDateTime = ZonedDateTime.now(ZoneId.of(America/New_York));        
 DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(date))
 ```
 
+## Creating a test
 
-Run the selected test or test folder: Ctrl+Shift+F10
-Stop the current test session: Ctrl+F2
+On the project pane on the left, expand src => test.
+
+Right-click on scala and select New => Scala class.
+
+Name the class CubeCalculatorTest and click OK.
+
+Replace the code with the following:
+
+```
+ import org.scalatest.FunSuite
+    
+ class CubeCalculatorTest extends FunSuite {
+   test("CubeCalculator.cube") {
+     assert(CubeCalculator.cube(3) === 27)
+   }
+ }
+ ```
+ 
+In the source code, right-click CubeCalculatorTest and select Run ‘CubeCalculatorTest’.
+
+**Run the selected test or test folder: Ctrl+Shift+F10
+
+Stop the current test session: Ctrl+F2**
 
