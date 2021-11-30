@@ -4184,3 +4184,8 @@ import java.time.ZoneId
 val date:ZonedDateTime = ZonedDateTime.now(ZoneId.of(America/New_York));         // ZonedDateTime.now() => default
 DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(date))
 ```
+
+
+Run the selected test or test folder: Ctrl+Shift+F10
+Stop the current test session: Ctrl+F2
+
