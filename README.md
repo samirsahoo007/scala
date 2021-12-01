@@ -4214,3 +4214,10 @@ In the source code, right-click CubeCalculatorTest and select Run ‘CubeCalcula
 
 Stop the current test session: Ctrl+F2**
 
+## Convert Instant to Long
+
+Instant.now().toEpochMilli()
+
+## String to LocalDateTime
+
+##
