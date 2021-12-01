@@ -4218,6 +4218,15 @@ Stop the current test session: Ctrl+F2**
 
 Instant.now().toEpochMilli()
 
+## Convert date time string to Long
+```
+val desiredTime = "3/20/2017 16:5:45"
+
+val format = new java.text.SimpleDateFormat("M/dd/yyyy HH:m:ss")
+val time = format.parse(desiredTime).getTime()
+print(time)
+```
+
 ## String to LocalDateTime
 
 ##
