@@ -4230,3 +4230,25 @@ print(time)
 ## String to LocalDateTime
 
 ##
+
+## Pattern Matching
+Matching against integer: 1, 2, or any
+
+```
+
+object Demo {
+   def main(args: Array[String]) {
+      println(matchTest("two"))
+      println(matchTest("test"))
+      println(matchTest(1))
+   }
+   
+   def matchTest(x: Any): Any = x match {
+      case 1 => "one"
+      ase 2 => "two"
+      case "three" => 3
+      case y: Int => "scala.Int"
+      case _ => "many"
+   }
+}
+```
