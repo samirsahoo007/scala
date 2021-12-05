@@ -4295,3 +4295,54 @@ object Demo {
 }
 ```
 
+## Access Modifiers
+
+#### private:       member is visible only inside the class or object that contains the member definition.
+#### protected:     member is only accessible from subclasses of the class in which the member is defined.
+#### public:		Unlike private and protected members, it is not required to specify Public keyword for Public members. There is no explicit modifier for public members. Such members can be accessed from anywhere.
+
+If not private/protected is mentioned then by default it becomes public.
+
+
+```
+# private
+class Outer {
+   class Inner {
+      private def f() { println("f") }
+      
+      class InnerMost {
+         f() // OK
+      }
+   }
+   (new Inner).f() // Error: f is not accessible
+}
+	
+#protected
+package p {
+   class Super {
+      protected def f() { println("f") }
+   }
+   
+   class Sub extends Super {
+      f()
+   }
+   
+   class Other {
+      (new Super).f() // Error: f is not accessible
+   }
+}
+
+# public
+class Outer {
+   class Inner {
+      def f() { println("f") }
+      
+      class InnerMost {
+         f() // OK
+      }
+   }
+   (new Inner).f() // OK because now f() is public
+}
+```
+
+
