@@ -4273,3 +4273,25 @@ object Demo {
    case class Person(name: String, age: Int)
 }
 ```
+
+### Regex
+
+```
+import scala.util.matching.Regex
+
+object Demo {
+   def main(args: Array[String]) {
+      val pattern = "Scala".r
+      val str = "Scala is Scalable and cool"
+      
+      println(pattern findFirstIn str)
+      
+      val pattern2 = new Regex("(S|s)cala")
+      println((pattern2 findAllIn str).mkString(","))
+      
+      val pattern3 = "(S|s)cala".r      
+      println(pattern replaceFirstIn(str, "Java"))
+   }
+}
+```
+
