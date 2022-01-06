@@ -544,6 +544,23 @@ scala> "1   2 3".split("\\s+")
 res2: Array[String] = Array(1, 2, 3)
 ```
 
+The string boo:and:foo, for example, yields the following results with these parameters:
+e.g. 
+```
+val str = "boo:and:foo"
+str.split(":", 2)	// Array(boo, "and:foo")
+
+str.split(":", 2).toString.trim
+```
+
+Regex Limit    Result
+:     2        { "boo", "and:foo" }
+:     5        { "boo", "and", "foo" }
+:    -2        { "boo", "and", "foo" }
+o     5        { "b", "", ":and:f", "", "" }
+o    -2        { "b", "", ":and:f", "", "" }
+o     0        { "b", "", ":and:f" }
+
 ### regex
 ```
 val numPattern = "[0-9]+".r
