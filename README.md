@@ -97,6 +97,10 @@ Block cursor indicates Insert mode. You can toggle it with Insert key.
 
 Another possible reason is **Block caret** option enabled in **Settings -> Appearance**
 
+## How to kill the process/free the port(e.g. 8888) if it throws "Address is already in use" exception
+netstat -ano | findstr :8888
+taskkill /PID <PID> /F
+
 ## How to start scala REPL(command-line shell)
 _REPL => Read-Evaluate-Print-Loop_
 
