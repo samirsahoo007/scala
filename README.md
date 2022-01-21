@@ -4209,6 +4209,17 @@ val date:ZonedDateTime = ZonedDateTime.now(ZoneId.of(America/New_York));        
 DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm").format(date))
 ```
 
+## Timestamp
+import java.time.LocalDateTime
+import java.ime.format.DateTimeFormatter
+
+DateTimeFormatter.ofPattern("yyyyMMddHHmmSS").format(LocalDateTime.now)
+
+## Changing working directory in Scala
+System.setProperty("user.dir","D:/Scala/")  
+System.getProperty("user.dir")                  
+> res25: String = D:/Scala/
+
 ## Creating a test
 
 On the project pane on the left, expand src => test.
