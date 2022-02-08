@@ -1,4 +1,8 @@
 Read it: https://leportella.com/scala-iv/
+https://blog.matthewrathbone.com/2017/03/06/scala-object-apply-functions.html
+https://twitter.github.io/scala_school/basics2.html
+https://www.baeldung.com/scala/classes-objects
+https://www.geeksforgeeks.org/scala-constructors/
 
 https://medium.com/@alessandroheres/scala-debugging-and-unit-testing-3d357e71ccc
 
