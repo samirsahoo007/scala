@@ -846,6 +846,26 @@ A Trait is a concept pre-dominantly used in object-oriented programming, which c
 A class is defined with the class keyword while an object is defined using the object keyword. Also, whereas a class can take parameters, an object can't take any parameter. ... For an object, we don't need the new keyword.
 
 
+## Aliasing Imports
+```
+import java.util.Date
+import java.sql.Date
+```
+	
+can be written as
+```
+import java.util.{Date => utilDate}
+import java.sql.{Date => sqlDate}
+```
+
+## Hiding a Class During Import
+In case we want to use the only java.sql.date format, but we need to import all modules from java.util, we will then need to hide java.util.date:
+
+```
+import java.util.{Date => _, _}
+import java.sql.Date
+```
+	
 #Note for Programming in Scala
 
 <br>
