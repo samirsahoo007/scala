@@ -206,6 +206,204 @@ object calculateResult extends App {
  }
 ```
 
+## Traits vs Abstract Class
+	Scala, Trait can have abstract and non-abstract(concrete methods) methods. In addition, You can create trait that can have all abstract methods or some abstract and some non-abstract methods.
+	
+Traits are similar to interfaces in Java and are created using trait keyword.
+
+Abstract Class is similar to abstract classes in Java and are created using abstract keyword.
+	
+	```
+	trait SampleTrait {
+   // Abstract method
+   def test
+
+   // Non-Abstract method
+   def tutorials() {
+      println("Traits tutorials")
+   }
+}
+
+abstract class SampleAbstractClass {
+   // Abstract method
+   def test
+
+   // Non-abstract meythod
+   def tutorials() {
+      println("Abstract Class tutorial")
+   }
+}
+
+class Tester extends SampleAbstractClass {
+   def test() {
+      println("Welcome to Tutorialspoint")
+   }
+}
+
+class TraitTester extends SampleTrait {
+   def test() {
+      println("Welcome to Tutorialspoint")
+   }
+}
+
+object HelloWorld {
+   // Main method
+   def main(args: Array[String]) {
+      var obj = new Tester()
+      obj.tutorials()
+      obj.test()
+      var obj1 = new TraitTester()
+      obj1.tutorials()
+      obj1.test()
+   }
+}
+	
+Output: 
+Abstract Class tutorial
+Welcome to Tutorialspoint
+Traits tutorials
+Welcome to Tutorialspoint
+```
+	
+Following are some of the important differences between Traits and Abstract Classes in Scala.
+
+Sr. No.	Key	Trait	Abstract Class
+1	Multiple inheritance	Trait supports multiple inheritance.	Abstract Class supports single inheritance only.
+2	Instance	Trait can be added to an object instance.	Abstract class cannot be added to an object instance.
+3	Constructor parameters	Trait cannot have parameters in its constructors.	Abstract class can have parameterised constructor.
+4	Interoperability	Traits are interoperable with java if they don't have any implementation.	Abstract classes are interoperable with java without any restriction.
+5	Stackability	Traits are stackable and are dynamically bound.	Abstract classes are not stacable and are statically bound.
+	
+
+## Abstract Class
+	Abstraction means hiding the internal details and showing only the functionality. And, In Scala abstraction is achieved by using abstract class. It can contain both abstract and non-abstract(concrete methods) methods. Above all, A class can extend only one abstract class.
+	
+Abstract classes may or may not contain abstract methods, i.e., methods without a body ( public void get(); )
+
+But, if a class has at least one abstract method, then the class must be declared abstract.
+
+If a class is declared abstract, it cannot be instantiated.
+
+To use an abstract class, you have to inherit it from another class, provide implementations for the abstract methods in it.
+
+If you inherit an abstract class, you have to provide implementations to all the abstract methods in it.
+	
+```
+	/* File name : Employee.java */
+public abstract class Employee {
+   private String name;
+   private String address;
+   private int number;
+
+   public Employee(String name, String address, int number) {
+      System.out.println("Constructing an Employee");
+      this.name = name;
+      this.address = address;
+      this.number = number;
+   }
+   public double computePay() {
+      System.out.println("Inside Employee computePay");
+      return 0.0;
+   }
+   public void mailCheck() {
+      System.out.println("Mailing a check to " + this.name + " " + this.address);
+   }
+   public String toString() {
+      return name + " " + address + " " + number;
+   }
+   public String getName() {
+      return name;
+   }
+   public String getAddress() {
+      return address;
+   }
+   public void setAddress(String newAddress) {
+      address = newAddress;
+   }
+   public int getNumber() {
+      return number;
+   }
+}
+```
+You can observe that except abstract methods the Employee class is the same as the normal class in Java. The class is now abstract, but it still has three fields, seven methods, and one constructor.
+
+Now you can try to instantiate the Employee class in the following way −
+```
+/* File name : AbstractDemo.java */
+public class AbstractDemo {
+
+   public static void main(String [] args) {
+      /* Following is not allowed and would raise error */
+      Employee e = new Employee("George W.", "Houston, TX", 43);
+      System.out.println("\n Call mailCheck using Employee reference--");
+      e.mailCheck();
+   }
+}
+When you compile the above class, it gives you the following error −
+
+Employee.java:46: Employee is abstract; cannot be instantiated      
+   Employee e = new Employee("George W.", "Houston, TX", 43);                    
+      ^
+1 error
+```
+
+### Inheriting the Abstract Class
+We can inherit the properties of Employee class just like a concrete class in the following way −
+```
+Example
+/* File name : Salary.java */
+public class Salary extends Employee {
+   private double salary;   // Annual salary
+
+   public Salary(String name, String address, int number, double salary) {
+      super(name, address, number);
+      setSalary(salary);
+   }
+   public void mailCheck() {
+      System.out.println("Within mailCheck of Salary class ");
+      System.out.println("Mailing check to " + getName() + " with salary " + salary);
+   }
+   public double getSalary() {
+      return salary;
+   }
+   public void setSalary(double newSalary) {
+      if(newSalary >= 0.0) {
+         salary = newSalary;
+      }
+   }
+   public double computePay() {
+      System.out.println("Computing salary pay for " + getName());
+      return salary/52;
+   }
+}
+Here, you cannot instantiate the Employee class, but you can instantiate the Salary Class, and using this instance you can access all the three fields and seven methods of Employee class as shown below.
+
+/* File name : AbstractDemo.java */
+public class AbstractDemo {
+
+   public static void main(String [] args) {
+      Salary s = new Salary("Mohd Mohtashim", "Ambehta, UP", 3, 3600.00);
+      Employee e = new Salary("John Adams", "Boston, MA", 2, 2400.00);
+      System.out.println("Call mailCheck using Salary reference --");
+      s.mailCheck();
+      System.out.println("\n Call mailCheck using Employee reference--");
+      e.mailCheck();
+   }
+}
+This produces the following result −
+
+Output
+Constructing an Employee
+Constructing an Employee
+Call mailCheck using Salary reference --
+Within mailCheck of Salary class  
+Mailing check to Mohd Mohtashim with salary 3600.0
+
+Call mailCheck using Employee reference--
+Within mailCheck of Salary class  
+Mailing check to John Adams with salary 2400.0
+```
+	
 ## Difference between var and val in scala
 **val makes a variable immutable** - like final in Java
 var makes a variable mutable.
