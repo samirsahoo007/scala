@@ -404,6 +404,68 @@ Within mailCheck of Salary class
 Mailing check to John Adams with salary 2400.0
 ```
 	
+## When to Use an Abstract Class
+### Problem
+Scala has traits, and a trait is more flexible than an abstract class, so you wonder, “When should I use an abstract class?”
+
+### Solution
+There are two main reasons to use an abstract class in Scala:
+
+You want to create a base class that requires constructor arguments.
+
+The code will be called from Java code.
+
+Regarding the first reason, traits don't allow constructor parameters:
+
+// this won't compile
+trait Animal(name: String)
+So, use an abstract class whenever a base behavior must have constructor parameters:
+
+abstract class Animal(name: String)
+	
+Regarding the second reason, if you’re writing code that needs to be accessed from Java, you’ll find that Scala traits with implemented methods can’t be called from Java code. If you run into this situation, see Recipe 17.7, for solutions to that problem.
+
+### Discussion
+Use an abstract class instead of a trait when the base functionality must take constructor parameters. However, be aware that a class can extend only one abstract class.
+
+Abstract classes work just like Java in that you can define some methods that have complete implementations, and other methods that have no implementation and are therefore abstract. To declare that a method is abstract, just leave the body of the method undefined:
+
+def speak   // no body makes the method abstract
+	
+There is no need for an abstract keyword; simply leaving the body of the method undefined makes it abstract. This is consistent with how abstract methods in traits are defined.
+
+In the following example, the methods save, update, and delete are defined in the abstract class BaseController, but the connect, getStatus, and set-ServerName methods have no method body, and are therefore abstract:
+
+```
+abstract class BaseController(db: Database) {
+
+  def save { db.save }
+  def update { db.update }
+  def delete { db.delete }
+
+  // abstract
+  def connect
+
+  // an abstract method that returns a String
+  def getStatus: String
+
+  // an abstract method that takes a parameter
+  def setServerName(serverName: String)
+}
+```
+	
+When a class extends the BaseController class, it must implement the connect, getStatus, and setServerName methods, or be declared abstract. Attempting to extend BaseController without implementing those methods yields a “class needs to be abstract” error, as shown in the REPL:
+
+scala> class WidgetController(db: Database) extends BaseController(db)
+<console>:9: error: class WidgetController needs to be abstract, since:
+method setServerName in class BaseController of type (serverName: String)Unit
+is not defined
+method getStatus in class BaseController of type => String is not defined
+method connect in class BaseController of type => Unit is not defined
+       class WidgetController(db: Database) extends BaseController(db)
+             ^
+Because a class can extend only one abstract class, when you’re trying to decide whether to use a trait or abstract class, always use a trait, unless you have this specific need to have constructor arguments in your base implementation.
+	
 ## Difference between var and val in scala
 **val makes a variable immutable** - like final in Java
 var makes a variable mutable.
