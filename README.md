@@ -57,6 +57,8 @@ Clicking **File -> Invalidate Caches and restarting the IDE**
 
 (though loading the project will take a while while the caches are recreated).
 
+## How do I check my Kerberos ticket on Windows?
+To view or delete Kerberos tickets you can use the Kerberos List (**Klist.exe**). The Klist.exe is a command-line tool you can find in the Kerberos resource kit. You can only use it to check and delete tickets from the current logon session. We recommend destroying your Kerberos tickets after your use.
 
 ## Creating the Project
 
