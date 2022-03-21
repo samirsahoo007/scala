@@ -95,6 +95,10 @@ object Hello extends App {
 1. Right click on Hello in your code and select Run ‘Hello’.
 You’re done!
 
+## Keyboard issue: Frequently, the pipe "|" remaps to the tilde "~" key i.e. when I press "|" it prints "~". How to solve it?
+This is due to UK Keyboard layout.
+**Press and hold the Windows key on your keyboard. Press the space bar**. A window opens. In this window, you can select the keyboard layout you want to use.
+
 ## Apostrophes and double quotes don't show up on inteliJ?
 press Left Alt+Shift.
 
