@@ -4676,7 +4676,7 @@ case class Person(name: String, address: Address)
 case class Address(city: String, state: String)
 
 object GsonTest extends App {
-    val p = Person("Alvin Alexander", Address("Talkeetna", "AK"))
+    val p = Person("Samir Sahoo", Address("Goregaon", "MUM"))
     // create a JSON string from the Person, then print it
     val gson = new Gson
     val jsonString = gson.toJson(p)
