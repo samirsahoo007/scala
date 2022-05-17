@@ -1132,6 +1132,101 @@ import java.util.{Date => _, _}
 import java.sql.Date
 ```
 	
+## File Handling
+
+### Creating a File
+```
+import java.io._  
+val fileObject = new File("ScalaFile.txt" )     // Creating a file  
+val printWriter = new PrintWriter(fileObject)       // Passing reference of file to the printwriter  
+printWriter.write("Hello, This is scala file")  // Writing to the file  
+printWriter.close()             // Closing printwriter  
+```
+
+### Reading File Example: Reading Each Charecter
+```
+import scala.io.Source  
+  
+object MainObject{  
+  def main(args:Array[String]){  
+    val filename = "ScalaFile.txt"  
+    val fileSource = Source.fromFile(filename)  
+    while(fileSource.hasNext){  
+      println(fileSource.next)  
+    }  
+    fileSource.close()  
+  }  
+}  
+
+# Output:
+H
+e
+l
+l
+o
+,
+ 
+T
+h
+i
+s
+ 
+i
+s
+ 
+s
+c
+a
+l
+a
+ 
+f
+i
+l
+e
+```
+
+### Reading a File Example: Reading Each Line
+```
+import scala.io.Source  
+object MainObject{  
+  def main(args:Array[String]){  
+    val filename = "ScalaFile.txt"  
+    val fileSource = Source.fromFile(filename)  
+    for(line<-fileSource.getLines){  
+      println(line)  
+    }  
+    fileSource.close()  
+  }  
+}  
+
+# Output:
+Hello, This is scala file
+```
+
+### Check if file exists
+```
+scala> import java.nio.file.Files
+scala> import java.nio.file.Paths
+scala> Paths.get("/tmp/baeldung.txt")
+val res0: java.nio.file.Path = /tmp/baeldung.txt
+scala> Files.exists(Paths.get("/tmp/baeldung.txt"))
+val res1: Boolean = true
+scala> Files.exists(Paths.get("/tmp/unexisting_file"))
+val res2: Boolean = false
+scala> Files.exists(Paths.get("/tmp"))
+val res3: Boolean = true
+```
+
+### delete file if exist, the Scala way
+```
+FileUtils.deleteQuietly(new File(path))
+
+	Or even
+
+new File(path).delete()
+```
+	
 #Note for Programming in Scala
 
 <br>
