@@ -1131,6 +1131,35 @@ In case we want to use the only java.sql.date format, but we need to import all 
 import java.util.{Date => _, _}
 import java.sql.Date
 ```
+
+## How to define a function basically to accept any case class object?
+
+<b>A case class which has no arguments is declared as case object instead of case class. case object is serializeable by default.</b>
+
+```
+trait SuperTrait  
+case class CaseClass1(a:Int,b:Int) extends SuperTrait  
+case class CaseClass2(a:Int) extends SuperTrait         // Case class  
+case object CaseObject extends SuperTrait               // Case object  
+object MainObject{  
+    def main(args:Array[String]){  
+        callCase(CaseClass1(10,10))  
+        callCase(CaseClass2(10))  
+        callCase(CaseObject)  
+    }  
+    def callCase(f:SuperTrait) = f match{  
+        case CaseClass1(f,g)=>println("a = "+f+" b ="+g)  
+        case CaseClass2(f)=>println("a = "+f)  
+        case CaseObject=>println("No Argument")  
+    }  
+}  
+Output:
+
+a = 10 b =10
+a = 10
+No Argument
+```
+	
 	
 ## File Handling
 
