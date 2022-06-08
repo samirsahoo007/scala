@@ -35,6 +35,7 @@ scala class_name
     how to install IntelliJ plugins (search for “Scala” in the plugins menu.) - https://www.jetbrains.com/help/idea/managing-plugins.html
     
 4. Now add Scala Libraries. Go to File/Project Structure/Globl Libraries --> (+ icon on top) --> Scala SDK --> Download (Or Browse if you already have Scala SDK)
+ * If you already have downloaded/saved SDK then just add the lib foler e.g. ...\scala\2.11.12\lib
 
 5. Next you have to remove some SDK files(If the build won't start and it shows error like below then multiple SDKs are pesent; we have to remove some...).
     Select everything( in the standard library section) that starts with ...\common\... and remove them
@@ -44,6 +45,7 @@ scala class_name
 6. Then remove all files that ends with ".src.jar" and remove them
 
 7. Repeat steps #5 and #6 for "Compiler classpath" section.
+
 
 ## Why so red? IntelliJ seems to think every declaration/method cannot be found/resolved
 
