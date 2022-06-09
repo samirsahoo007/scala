@@ -4636,6 +4636,29 @@ System.setProperty("user.dir","D:/Scala/")
 System.getProperty("user.dir")                  
 > res25: String = D:/Scala/
 
+Useful Formatting Patterns
+Pattern
+Example
+yyyy-MM-dd (ISO)
+“2018-07-14”
+dd-MMM-yyyy
+“14-Jul-2018”
+dd/MM/yyyy
+“14/07/2018”
+E, MMM dd yyyy
+“Sat, Jul 14 2018”
+h:mm a
+“12:08 PM”
+EEEE, MMM dd, yyyy HH:mm:ss a
+“Saturday, Jul 14, 2018 14:31:06 PM”
+yyyy-MM-dd'T'HH:mm:ssZ
+“2018-07-14T14:31:30+0530”
+hh 'o''clock' a, zzzz
+“12 o’clock PM, Pacific Daylight Time”
+K:mm a, z
+“0:08 PM, PDT”
+
+
 ## Creating a test
 
 On the project pane on the left, expand src => test.
